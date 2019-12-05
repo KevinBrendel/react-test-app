@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import {
+	BrowserRouter as Router, Route, Switch, Redirect
+} from "react-router-dom";
+
+import InputPage from './pages/InputPage';
+import DisplayPage from './pages/DisplayPage';
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [userName, setUserName] = useState<String>("");
+
+	return (
+		<div className="App">
+			<Router>
+				<Switch>
+					<Route path="/input" render={(props) => <InputPage userName={userName} setUserName={setUserName} />} />
+					<Route path="/display" render={(props) => <DisplayPage userName={userName} setUserName={setUserName} />} />
+					<Redirect from="/" to="/input" />
+				</Switch>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
