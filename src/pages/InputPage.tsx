@@ -9,9 +9,8 @@ import { UserNameProps } from "../state/UserNameProps";
 const InputPage: React.FC<UserNameProps> = (props) => {
 	let history = useHistory();
 
-	const onSubmit = () => {
-		//e.preventDefault();
-		console.log(props.userName);
+	const onSubmit = (event: any) => {
+		event.preventDefault();
 		if (props.userName.length > 0) history.push("/display");
 	}
 
@@ -31,7 +30,7 @@ const InputPage: React.FC<UserNameProps> = (props) => {
 					<TextField label="Name" value={props.userName} onChange={onInputChanged} required />
 				</Grid>
 				<Grid item>
-					<Button variant="contained" color="primary" onClick={onSubmit} disabled={props.userName.length === 0}>Submit</Button>
+					<Button type="submit" variant="contained" color="primary" onClick={onSubmit} disabled={props.userName.length === 0}>Submit</Button>
 				</Grid>
 			</Grid>
 		</form>
