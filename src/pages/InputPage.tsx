@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { Grid, TextField } from "@material-ui/core";
+import { Grid, TextField, Typography } from "@material-ui/core";
 import {
 	useHistory
 } from 'react-router-dom'
@@ -10,7 +10,9 @@ const InputPage: React.FC<UserNameProps> = (props) => {
 	let history = useHistory();
 
 	const onSubmit = () => {
-		history.push("/display");
+		//e.preventDefault();
+		console.log(props.userName);
+		if (props.userName.length > 0) history.push("/display");
 	}
 
 	const onInputChanged = (event: any) => {
@@ -18,17 +20,22 @@ const InputPage: React.FC<UserNameProps> = (props) => {
 	}
 
 	return (
-		<Grid container spacing={2} direction="column" justify="center" alignItems="center">
-			<Grid item>
-				Enter your name
+		<form onSubmit={onSubmit}>
+			<Grid container spacing={2} direction="column" justify="center" alignItems="center" style={{ minHeight: "100vh" }}>
+				<Grid item>
+					<Typography variant="h4">
+						Enter your name
+				</Typography>
 				</Grid>
-			<Grid item>
-				<TextField label="Name" value={props.userName} onChange={onInputChanged} />
+				<Grid item>
+					<TextField label="Name" value={props.userName} onChange={onInputChanged} required />
+				</Grid>
+				<Grid item>
+					<Button variant="contained" color="primary" onClick={onSubmit} disabled={props.userName.length === 0}>Submit</Button>
+				</Grid>
 			</Grid>
-			<Grid item>
-				<Button variant="contained" color="primary" onClick={onSubmit} disabled={props.userName.length === 0}> Submit</Button>
-			</Grid>
-		</Grid>);
+		</form>
+	);
 }
 
 export default InputPage

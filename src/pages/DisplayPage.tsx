@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Typography } from "@material-ui/core";
 import {
 	useHistory
 } from 'react-router-dom'
@@ -18,9 +18,11 @@ const DisplayPage: React.FC<UserNameProps> = (props) => {
 	}
 
 	return (
-		<Grid container spacing={2} direction="column" justify="center" alignItems="center">
+		<Grid container spacing={2} direction="column" justify="center" alignItems="center" style={{ minHeight: "100vh" }}>
 			<Grid item>
-				<div>Hello {props.userName}!</div>
+				<Typography variant="h4">
+					Hello {props.userName}!
+				</Typography>
 			</Grid>
 			<Grid container spacing={2} direction="row" justify="center" alignItems="center">
 				<Grid item>
