@@ -32,7 +32,6 @@ const DisplayPage: React.FC<UserNameProps> = (props) => {
 					<Button variant="contained" color="primary" onClick={onReset}>Reset</Button>
 				</Grid>
 			</Grid>
-
 		</Grid>);
 }
 
