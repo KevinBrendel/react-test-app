@@ -1,7 +1,12 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography, Container, Grid } from "@material-ui/core";
+
+const style: React.CSSProperties = {
+	backgroundColor: "WhiteSmoke",
+	textAlign: "center",
+}
 
 export default () =>
-	<Grid container justify="center">
+	<Grid item style={style}>
 		<Typography variant="subtitle1">Footer</Typography>
 	</Grid>
