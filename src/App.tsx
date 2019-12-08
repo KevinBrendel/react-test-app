@@ -12,19 +12,17 @@ const App: React.FC = () => {
 	const [userName, setUserName] = useState<String>("");
 
 	return (
-		<Fragment>
-			<Grid container direction="column" justify="space-between" alignContent="stretch" style={{ minHeight: "100vh" }}>
-				<Header />
-				<Router>
-					<Switch>
-						<Route path="/input" render={() => <InputPage userName={userName} setUserName={setUserName} />} />
-						<Route path="/display" render={() => <DisplayPage userName={userName} setUserName={setUserName} />} />
-						<Redirect from="/" to="/input" />
-					</Switch>
-				</Router>
-				<Footer />
-			</Grid>
-		</Fragment>
+		<Grid container direction="column" justify="space-between" alignContent="stretch" style={{ minHeight: "100vh" }}>
+			<Header />
+			<Router>
+				<Switch>
+					<Route path="/input" render={() => <InputPage userName={userName} setUserName={setUserName} />} />
+					<Route path="/display" render={() => <DisplayPage userName={userName} setUserName={setUserName} />} />
+					<Redirect from="/" to="/input" />
+				</Switch>
+			</Router>
+			<Footer />
+		</Grid>
 	);
 }
 
