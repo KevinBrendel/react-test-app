@@ -27,7 +27,7 @@ const InputPage: React.FC<UserNameProps> = (props) => {
 				</Typography>
 				</Grid>
 				<Grid item>
-					<TextField label="Name" value={props.userName} onChange={onInputChanged} required />
+					<TextField label="Name" value={props.userName} onChange={onInputChanged} required autoFocus />
 				</Grid>
 				<Grid item>
 					<Button type="submit" variant="contained" color="primary" onClick={onSubmit} disabled={props.userName.length === 0}>Submit</Button>
