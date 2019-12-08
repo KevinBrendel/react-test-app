@@ -1,7 +1,8 @@
 import React from "react";
-import { Typography, Container, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 
 const style: React.CSSProperties = {
+	color: "Grey",
 	backgroundColor: "WhiteSmoke",
 	textAlign: "center",
 }
