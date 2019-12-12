@@ -18,7 +18,7 @@ const DisplayPage: React.FC<UserNameProps> = (props) => {
 	}
 
 	return (
-		<Grid container item spacing={2} direction="column" alignItems="center">
+		<Grid container item spacing={2} direction="column" alignItems="center" style={{ padding: 20 }}>
 			<Grid item>
 				<Typography variant="h4">
 					Hello {props.userName}!
